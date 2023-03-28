@@ -6,7 +6,9 @@
  * Version: 0.0.1
  * 
  */
-
+echo '<pre>';
+var_dump(get_option('tarteaucitron_settings_group'));
+echo '</pre>';
  function tarteaucitron_config() {
     if ( ! is_user_logged_in() ) : ?>
     <script type="text/javascript">
@@ -118,6 +120,7 @@ function tarte_citron_html() {
     function addHashtag() {
         $options = get_option('tarteaucitron');
         $value = $options['hash'] ?? '';
+        update_option('tarteaucitron_hashtag',$value);
     ?>
         <div>
             <label>Hashtag</label>
@@ -129,6 +132,7 @@ function tarte_citron_html() {
     function addPrivacy() {
         $options = get_option('tarteaucitron_settings_group');
         $value = $options['privacy'] ?? '';
+        update_option('tarteaucitron_privacy',$value);
     ?>
         <div>
             <label>HighPrivacy</label>
@@ -143,6 +147,7 @@ function tarte_citron_html() {
     function addCta() {
         $options = get_option('tarteaucitron_settings_group');
         $value = $options['cta'] ?? '';
+        update_option('tarteaucitron_cta',$value);
     ?>
         <div>
             <label>AcceptAllCta</label>
@@ -157,6 +162,7 @@ function tarte_citron_html() {
     function addOrientation() {
         $options = get_option('tarteaucitron_settings_group');
         $value = $options['orientation'] ?? '' ;
+        update_option('tarteaucitron_orientation', $value);
     ?>
         <div>
             <label>orientation</label>
@@ -172,6 +178,7 @@ function tarte_citron_html() {
     function addAdblocker() {
         $options = get_option('tarteaucitron_settings_group');
         $value = $options['adblocker'] ?? '' ;
+        update_option('tarteaucitron_adblocker', $value);
     ?>
         <div>
             <label>adblocker</label>
@@ -186,6 +193,7 @@ function tarte_citron_html() {
     function addAlert() {
         $options = get_option('tarteaucitron_settings_group');
         $value = $options['addAlert'] ?? '' ;
+        update_option('tarteaucitron_alert', $value);
     ?>
         <div>
             <label>showAlertSmall</label>
@@ -200,6 +208,7 @@ function tarte_citron_html() {
     function addCookieslist() {
         $options = get_option('tarteaucitron_settings_group');
         $value = $options['cookies'] ?? '' ;
+        update_option('tarteaucitron_cookies', $value);
     ?>
         <div>
             <label>cookieslist</label>
